@@ -8,7 +8,6 @@ import { Adapter } from "next-auth/adapters"; // 🔥 Pastikan tipe sesuai denga
 import { NextResponse } from "next/server";
 import Google from "next-auth/providers/google";
 import GitHub from "next-auth/providers/github";
-import { GetUsersById } from "./lib/data";
 
 interface CustomUser {
   id: string;
