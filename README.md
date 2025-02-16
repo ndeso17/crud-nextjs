@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+Membuat file .env yang isinya :
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+// Neon vercel.com
+DATABASE_URL=postgres://neondb_owner:xxxxxx
+DATABASE_URL_UNPOOLED=postgresql://neondb_owner:xxxxxx
+PGHOST=xxxxxx
+PGHOST_UNPOOLED=xxxxxx
+PGUSER=xxxxxx
+PGDATABASE=xxxxxx
+PGPASSWORD=xxxxxx
+POSTGRES_URL=postgres://neondb_owner:xxxxxx
+POSTGRES_URL_NON_POOLING=postgres://neondb_owner:xxxxxx
+POSTGRES_USER=xxxxxx
+POSTGRES_HOST=xxxxxx
+POSTGRES_PASSWORD=xxxxxx
+POSTGRES_DATABASE=xxxxxx
+POSTGRES_URL_NO_SSL=postgres://neondb_owner:xxxxxx
+POSTGRES_PRISMA_URL=postgres://neondb_owner:xxxxxx
+connect_timeout=xxxxxx
+sslmode=xxxxxx
+
+//Random String (Opsional 64 karakter)
+AUTH_SECRET="xxxxxx"
+
+// https://console.cloud.google.com
+AUTH_GOOGLE_ID="xxxxxx"
+AUTH_GOOGLE_SECRET="xxxxxx"
+
+// https://github.com/settings/developers
+AUTH_GITHUB_ID="xxxxxx"
+AUTH_GITHUB_SECRET="xxxxxx"
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Awal instalasi package, migrate prisma, dan menjalankan mode development :
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npx prisma generate
+npx prisma migrate dev
+npm run dev
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
 
-## Learn More
+Buka di Browser : [http://localhost:3000](http://localhost:3000)
 
-To learn more about Next.js, take a look at the following resources:
+Prisma Studio, mengelola data :
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npx prisma studio
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Prisma Studio Web Page : [http://localhost:5555](http://localhost:5555)
